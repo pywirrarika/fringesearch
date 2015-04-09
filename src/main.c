@@ -19,7 +19,6 @@
 #include "data.h"
 #include "graphs.h"
 #include "fringe.h"
-#include "paral_tools.h"
 
 int func_list_comparator(void *data1, void *data2);
 int func_list_free(void *data);
@@ -64,22 +63,8 @@ init_error(void)
 // This function is only useful with pthreads!
 void *ai_bps(void *args)
 {
-    /*pth_args *args_p;
-    args_p = (pth_args *)args;
-    if(!ai_bps_shortes_path(args_p->astar, \
-                args_p->astar2, \
-                0, args_p->collition_flag,\
-                args_p->pathfound_flag, \
-                args_p->mutex_p, \
-                args_p->thread_no, \
-                args_p->barrier))
-    {
-        printf("We couldn't find any path to the goal!\n");
-    }
-    */
     printf("Thread done!\n");
     return NULL;
-    //ai_bps_shortes_path/return args_p->astar;
 }
 
 
@@ -90,18 +75,6 @@ int main (int argc, char **argv)
     apoint              source, goal;
     fobj                *fringe_master;
     
-    // Parallel vars
-    int                 threads_max;
-    int                 numCPU;
-    //pthread_t           threads[2];
-    //long                thread;
-    //pth_args            args;
-    //pth_args            args2;
-    //pthread_mutex_t     mutex_p;
-    //pthread_barrier_t   barrier;
-
-    // Objects for the Pararllel Bidirectional Search
-
     if (argc != 9)
     {
         init_error();
@@ -114,8 +87,6 @@ int main (int argc, char **argv)
     goal.x = atoi(argv[3]);
     goal.y = atoi(argv[4]);
 
-    threads_max = atoi(argv[7]);
-
     debug = atoi(argv[8]);
 
  
@@ -126,14 +97,9 @@ int main (int argc, char **argv)
         //return 0;
     }
 
-    //list_nodes = list_add(&list_nodes, agent); 
 
-    // We start the execution of the Parallel bidirectional Search
     printf("======= FRINGE SEARCH ========\n");
 
-
-    numCPU = sysconf( _SC_NPROCESSORS_ONLN );
-    printf("Processors aiviable: %d\n", numCPU);
 
     fringe_master = fs_create(source.x,
                         source.y, 
@@ -151,36 +117,6 @@ int main (int argc, char **argv)
 
 
     fringe_search(fringe_master);
-
-    //pthread_mutex_init(&mutex_p, NULL);
-    //pthread_barrier_init(&barrier, NULL, 2);
-
-    /*
-    args.astar = bps_astar_master;
-    args.astar2 = bps_astar_slave;
-    args.pathfound_flag = &pathfound_flag;
-    args.collition_flag = &collition_flag;
-    args.mutex_p = &mutex_p;
-    args.barrier = &barrier;
-    args.thread_no = 0;
-
-    args2.astar = bps_astar_slave;
-    args2.astar2 = bps_astar_master;
-    args2.pathfound_flag = &pathfound_flag;
-    args2.collition_flag = &collition_flag;
-    args2.mutex_p = &mutex_p;
-    args2.barrier = &barrier;
-    args2.thread_no = 1;
-    */
-
-    /*pthread_create(&(threads[0]), NULL, ai_bps, (void *)(&args)); 
-    pthread_create(&(threads[1]), NULL, ai_bps, (void *)(&args2)); 
-
-    for(thread = 0; thread < 2; thread++)
-    {
-        pthread_join(threads[thread], NULL);
-    }
-    */
 
     if(fringe_master->result)
     {

@@ -8,7 +8,6 @@ fs_SOURCES = main.c \
 				graphs.c \
 				qdbmp.c \
 				data.c \
-				paral_tools.c \
 				base.c \
 				dllist.c \
 				fringe.c
@@ -19,6 +18,5 @@ EXTRA_DIST =	sglib.h \
 				hashtable.h \
 				qdbmp.c \
 				data.h \
-				paral_tools.h \
 				dllist.h \
 				finge.h

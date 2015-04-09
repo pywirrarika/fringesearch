@@ -21,7 +21,7 @@ main.o: main.c ../config.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
  /usr/include/signal.h /usr/include/bits/setjmp.h base.h dllist.h data.h \
  /usr/include/string.h /usr/include/bits/string.h \
- /usr/include/bits/string2.h qdbmp.h fringe.h graphs.h paral_tools.h
+ /usr/include/bits/string2.h qdbmp.h fringe.h graphs.h
 
 ../config.h:
 
@@ -130,5 +130,3 @@ qdbmp.h:
 fringe.h:
 
 graphs.h:
-
-paral_tools.h:

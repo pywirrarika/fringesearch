@@ -1,4 +1,5 @@
-AC_INIT([Parallel Astar], [0.3], [fongog@gmail.com], [pastar])
+AC_INIT([Fringe Search], [0.3], [fongog@gmail.com], [pastar])
+
 
 AC_PREREQ([2.62])
 AC_CANONICAL_HOST
@@ -33,11 +34,6 @@ AC_PROG_MKDIR_P
 # Checks for libraries.
 # -----------------------------------------------------------------------
 
-# pthreads
-AX_PTHREAD
-LIBS="$PTHREAD_LIBS $LIBS"
-CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-CC="$PTHREAD_CC"
 
 CFLAGS="$CFLAGS -ggdb -lm -pg"
 
