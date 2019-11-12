@@ -87,11 +87,11 @@ int h(fobj *fringe, fnode *node)
     
     if (xDistance > yDistance)
     {
-        return 15*yDistance + 10*(xDistance-yDistance);
+        return 14*yDistance + 10*(xDistance-yDistance);
     }
     else
     {
-        return 15*xDistance + 10*(yDistance-xDistance);
+        return 14*xDistance + 10*(yDistance-xDistance);
     }
 }
 
