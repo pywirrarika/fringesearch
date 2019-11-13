@@ -6,7 +6,7 @@ This is an implementation of the Fringe Search Algorithm (Björnsson, et. al. 20
 
 The command line instrucctions are as follows:
 
-$fs X Y X2 Y2 map.bmp output.bmp MAX_PROC DEBUG
+`$ fs X Y X2 Y2 map.bmp output.bmp MAX_PROC DEBUG`
 
 where (X, Y) is the starting point and (X2, Y2) the goal point. The BMP files should be 24bit images without compression. 
 
@@ -15,20 +15,20 @@ where (X, Y) is the starting point and (X2, Y2) the goal point. The BMP files sh
 
 A simple compilation should be enougth
 
-$ autoreconfig --install
-$ ./configure
-$ make
+`$ autoreconfig --install`
+`$ ./configure`
+`$ make`
 
 ## Citation
 
 If you found usefull this implementation and you used it in an scientific research you can cite it as follows:
 
-@misc{manuel2015algoritmo,
+`@misc{manuel2015algoritmo,
   title={El algoritmo fringe search como soluci{\'o}n superior aa* en la b{\'u}squeda de caminos sobre gr{\'a}ficos de malla},
   author={Manuel, Mager Hois Jes{\'u}s},
   year={2015},
   publisher={May}
-}
+}`
 
 ## References
 
