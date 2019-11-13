@@ -16,7 +16,9 @@ where (X, Y) is the starting point and (X2, Y2) the goal point. The BMP files sh
 A simple compilation should be enougth
 
 `$ autoreconfig --install`
+
 `$ ./configure`
+
 `$ make`
 
 ## Citation
